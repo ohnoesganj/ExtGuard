@@ -1,0 +1,11 @@
+# Node modules
+/node_modules/
+
+# dotenv
+/backend/.env
+
+# DB config
+/backend/config/db.js
+
+# 로그 파일
+*.log
