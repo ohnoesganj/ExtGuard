@@ -13,5 +13,10 @@ app.use(bodyParser.json());
 app.use("/fixed", fixedRoutes);
 app.use("/custom", customRoutes);
 
-const PORT = 5001;
+app.use((err, req, res, next) => {
+  console.error(err);
+  res.status(500).json({ error: err.message || "Internal Server Error" });
+});
+
+const PORT = process.env.PORT || 5001;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
