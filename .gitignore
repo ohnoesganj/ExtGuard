@@ -3,6 +3,7 @@
 
 # dotenv
 /backend/.env
+/frontend/.env
 
 # DB config
 /backend/config/db.js

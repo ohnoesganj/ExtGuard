@@ -1,3 +1,4 @@
+/* 커스텀 확장자 검증*/
 export const validateExtension = (ext) => {
   if (!ext) return "확장자를 입력하세요.";
   if (ext.length > 20) return "확장자는 최대 20자리까지 가능합니다.";

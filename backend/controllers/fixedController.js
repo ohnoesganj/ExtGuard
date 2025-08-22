@@ -1,5 +1,8 @@
 const FixedExtension = require("../models/FixedExtension");
 
+/* 고정 확장자 */
+
+/* 조회 */
 exports.getFixedExtensions = async (req, res) => {
   try {
     const data = await FixedExtension.getAllDatas();
@@ -9,6 +12,7 @@ exports.getFixedExtensions = async (req, res) => {
   }
 };
 
+/* 수정 */
 exports.updateFixedExtensions = async (req, res) => {
   const { id } = req.params;
   let { checked } = req.body;

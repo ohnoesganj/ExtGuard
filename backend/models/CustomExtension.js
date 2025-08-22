@@ -1,5 +1,6 @@
 const db = require("../config/db");
 
+/* 커스텀 확장자 */
 const CustomExtension = {
   getAllDatas: async () => {
     const [rows] = await db.query("SELECT * FROM custom_extensions");

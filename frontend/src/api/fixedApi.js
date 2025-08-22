@@ -1,6 +1,7 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:5001/fixed";
+/* 고정 확장자 */
+const API_URL = process.env.REACT_APP_API_FIXED;
 
 export const getFixedExtensions = async () => {
   const res = await axios.get(API_URL);

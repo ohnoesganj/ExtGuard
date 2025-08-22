@@ -1,6 +1,7 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:5001/custom";
+/* 커스텀 확장자 */
+const API_URL = process.env.REACT_APP_API_CUSTOM;
 
 export const getCustomExtensions = async () => {
   const res = await axios.get(API_URL);

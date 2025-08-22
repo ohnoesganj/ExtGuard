@@ -1,6 +1,9 @@
 const CustomExtension = require("../models/CustomExtension");
 const { validateExtension } = require("../utils/validateExtension");
 
+/* 커스텀 확장자 */
+
+/* 조회 */
 exports.getCustomExtensions = async (req, res) => {
   try {
     const data = await CustomExtension.getAllDatas();
@@ -10,6 +13,7 @@ exports.getCustomExtensions = async (req, res) => {
   }
 };
 
+/* 삽입 */
 exports.addCustomExtensions = async (req, res) => {
   const { customName } = req.body;
 
@@ -24,6 +28,7 @@ exports.addCustomExtensions = async (req, res) => {
   }
 };
 
+/* 삭제 */
 exports.deleteCustomExtension = async (req, res) => {
   const { id } = req.params;
 
