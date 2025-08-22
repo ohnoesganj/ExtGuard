@@ -5,13 +5,13 @@ const CustomExtension = {
     const [rows] = await db.query("SELECT * FROM custom_extensions");
     return rows;
   },
-  addData: async () => {
-    await db.query("INSERT INTO custom_extensions (custom_name) VALUES (?)", [
-      custom_name,
+  addData: async (customName) => {
+    await db.query("INSERT INTO custom_extensions (customName) VALUES (?)", [
+      customName,
     ]);
   },
-  deleteData: async () => {
-    await db.query("DELETE FROM cunstom_extensions WHERE id = ?", [id]);
+  deleteData: async (id) => {
+    await db.query("DELETE FROM custom_extensions WHERE id = ?", [id]);
   },
 };
 

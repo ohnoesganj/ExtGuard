@@ -8,6 +8,8 @@ export const getFixedExtensions = async () => {
 };
 
 export const updateFixedExtensions = async (id, checked) => {
-  const res = await axios.patch(`${API_URL}/${id}`, { checked });
+  const res = await axios.patch(`${API_URL}/${id}`, {
+    checked: checked ? 1 : 0,
+  });
   return res.data;
 };

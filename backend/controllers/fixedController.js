@@ -11,10 +11,12 @@ exports.getFixedExtensions = async (req, res) => {
 
 exports.updateFixedExtensions = async (req, res) => {
   const { id } = req.params;
-  const { is_checked } = req.body;
+  let { checked } = req.body;
+
+  checked = checked ? 1 : 0;
 
   try {
-    await FixedExtension.updateStatus(id, is_checked);
+    await FixedExtension.updateStatus(id, checked);
     res.json({ message: "Updated Success" });
   } catch (err) {
     res.status(500).json({ error: err.message });

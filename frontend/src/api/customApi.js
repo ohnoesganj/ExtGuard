@@ -7,8 +7,8 @@ export const getCustomExtensions = async () => {
   return res.data;
 };
 
-export const addCustomExtensions = async (custom_name) => {
-  const res = await axios.post(API_URL, { custom_name });
+export const addCustomExtensions = async (customName) => {
+  const res = await axios.post(API_URL, { customName });
   return res.data;
 };
 
