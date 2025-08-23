@@ -13,11 +13,6 @@ app.use(bodyParser.json());
 app.use("/api/fixed", fixedRoutes);
 app.use("/api/custom", customRoutes);
 
-app.use(express.static(path.join(__dirname, "../frontend/build")));
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "../frontend/build", "index.html"));
-});
-
 app.use((err, req, res, next) => {
   console.error(err);
   res.status(500).json({ error: err.message || "Internal Server Error" });
