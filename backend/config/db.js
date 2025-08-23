@@ -1,9 +1,6 @@
 const mysql = require("mysql2");
 const path = require("path");
-console.log("__dirname:", __dirname);
-console.log("resolved .env path:", path.resolve(__dirname, "../.env"));
-
-require("dotenv").config({ path: path.resolve(__dirname, "../.env") });
+require("dotenv").config({ path: path.resolve(__dirname, "/.env") });
 
 console.log("db.js is loaded");
 console.log("DB_USER:", process.env.DB_USER);
