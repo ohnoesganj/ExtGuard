@@ -10,8 +10,8 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 
-app.use("/fixed", fixedRoutes);
-app.use("/custom", customRoutes);
+app.use("/api/fixed", fixedRoutes);
+app.use("/api/custom", customRoutes);
 
 app.use((err, req, res, next) => {
   console.error(err);

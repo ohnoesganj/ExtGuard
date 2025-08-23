@@ -7,3 +7,6 @@
 
 # 로그 파일
 *.log
+
+# pem
+extGuardKey.pem
