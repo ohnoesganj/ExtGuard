@@ -2,6 +2,7 @@ const mysql = require("mysql2");
 require("dotenv").config({ path: __dirname + "../.env" });
 
 console.log("db.js is loaded");
+console.log("DB_USER:", process.env.DB_USER);
 
 const pool = mysql.createPool({
   host: process.env.DB_HOST,
