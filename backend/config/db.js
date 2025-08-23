@@ -1,9 +1,5 @@
 const mysql = require("mysql2");
-const path = require("path");
-require("dotenv").config({ path: "/home/ubuntu/ExtGuard/backend/.env" });
-
-console.log("db.js is loaded");
-console.log("DB_USER:", process.env.DB_USER);
+require("dotenv").config();
 
 const pool = mysql.createPool({
   host: process.env.DB_HOST,
