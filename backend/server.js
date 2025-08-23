@@ -6,6 +6,15 @@ const db = require("./config/db");
 const fixedRoutes = require("./routes/fixedRoutes");
 const customRoutes = require("./routes/customRoutes");
 
+pool.getConnection((err, connection) => {
+  if (err) {
+    console.error("DB connection error:", err);
+    return;
+  }
+  console.log("DB connected");
+  connection.release();
+});
+
 const app = express();
 app.use(cors());
 app.use(bodyParser.json());
@@ -19,8 +28,9 @@ app.use((err, req, res, next) => {
 });
 
 if (process.env.NODE_ENV !== "test") {
-  const PORT = process.env.PORT || 5001;
-  app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+  app.listen(process.env.PORT || 5001, "0.0.0.0", () => {
+    console.log(`Server running on port ${process.env.PORT || 5001}`);
+  });
 }
 
 module.exports = app;
