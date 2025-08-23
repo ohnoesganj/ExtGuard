@@ -14,17 +14,6 @@ app.use(bodyParser.json());
 app.use("/api/fixed", fixedRoutes);
 app.use("/api/custom", customRoutes);
 
-// app.get("*", (req, res, next) => {
-//   if (req.path.startsWith("/api/")) return next();
-
-//   res.sendFile(
-//     path.join(__dirname, "../frontend/build", "index.html"),
-//     (err) => {
-//       if (err) next(err);
-//     }
-//   );
-// });
-
 app.use((err, req, res, next) => {
   console.error(err);
   res.status(500).json({ error: err.message || "Internal Server Error" });

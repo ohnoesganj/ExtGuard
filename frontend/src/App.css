@@ -58,7 +58,6 @@
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  flex-grow: 1;
   overflow-y: auto;
 }
 
