@@ -36,26 +36,28 @@ describe("커스텀 확장자 API", () => {
   });
 
   test("GET /custom -> 전체 조회", async () => {
-    const res = await request(app).get("/custom");
+    const res = await request(app).get("/api/custom");
     expect(res.statusCode).toBe(200);
     expect(res.body).toHaveLength(2);
   });
 
   test("POST /custom -> 추가", async () => {
-    const res = await request(app).post("/custom").send({ customName: "7z" });
+    const res = await request(app)
+      .post("/api/custom")
+      .send({ customName: "7z" });
     expect(res.statusCode).toBe(200);
     expect(res.body.message).toBe("Added Successfully");
 
-    const after = await request(app).get("/custom");
+    const after = await request(app).get("/api/custom");
     expect(after.body.find((e) => e.customName === "7z")).toBeTruthy();
   });
 
   test("DELETE /custom/:id -> 삭제", async () => {
-    const res = await request(app).delete("/custom/1");
+    const res = await request(app).delete("/api/custom/1");
     expect(res.statusCode).toBe(200);
     expect(res.body.message).toBe("Deleted Successfully");
 
-    const after = await request(app).get("/custom");
+    const after = await request(app).get("/api/custom");
     expect(after.body.find((e) => e.id === 1)).toBeFalsy();
   });
 });
