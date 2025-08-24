@@ -1,7 +1,6 @@
 const express = require("express");
 const cors = require("cors");
 const bodyParser = require("body-parser");
-const path = require("path");
 const db = require("./config/db");
 
 const fixedRoutes = require("./routes/fixedRoutes");
@@ -20,7 +19,7 @@ app.use((err, req, res, next) => {
 });
 
 if (process.env.NODE_ENV !== "test") {
-  app.listen(process.env.PORT || 5001, "0.0.0.0", () => {
+  app.listen(process.env.PORT || 5001, () => {
     console.log(`Server running on port ${process.env.PORT || 5001}`);
   });
 }

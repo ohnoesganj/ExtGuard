@@ -1,6 +1,6 @@
 const CustomExtension = require("../models/CustomExtension");
+const FixedExtension = require("../models/FixedExtension");
 const { validateExtension } = require("../utils/validateExtension");
-const errorHandler = require("../utils/errorHandler");
 
 /* 커스텀 확장자 */
 
@@ -16,6 +16,14 @@ exports.addCustomExtensions = async (req, res) => {
 
   if (!validateExtension(customName))
     return res.status(400).json({ error: "Invalid Extension Name" });
+
+  const fixedData = await FixedExtension.getAllDatas();
+  const existsInFixed = fixedData.some(
+    (ext) => ext.name.toLowerCase() === customName.toLowerCase()
+  );
+
+  if (existsInFixed)
+    return res.status(400).json({ error: "Exists Extension Name" });
 
   await CustomExtension.addData(customName);
   res.json({ message: "Added Successfully" });

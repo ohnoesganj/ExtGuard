@@ -1,5 +1,4 @@
 const FixedExtension = require("../models/FixedExtension");
-const errorHandler = require("../utils/errorHandler");
 
 /* 고정 확장자 */
 
