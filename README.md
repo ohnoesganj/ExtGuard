@@ -16,6 +16,7 @@ ExtGuard는 **파일 확장자를 차단하고 관리**할 수 있는 웹 애플
 ## 🗂 ERD 설계
 <img width="643" height="91" alt="image" src="https://github.com/user-attachments/assets/30f974cd-84b2-4b33-b5d6-07eaaf48bad0" />
 
+---
 
 
 ## 📂 디렉토리 구조
