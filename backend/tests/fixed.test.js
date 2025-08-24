@@ -32,18 +32,20 @@ describe("고정 확장자 API", () => {
   });
 
   test("GET /fixed -> 전체 조회", async () => {
-    const res = await request(app).get("/fixed");
+    const res = await request(app).get("/api/fixed");
     expect(res.statusCode).toBe(200);
     expect(res.body).toHaveLength(2);
     expect(res.body[0].name).toBe("exe");
   });
 
   test("PATCH /fixed/:id -> 상태 업데이트", async () => {
-    const res = await request(app).patch("/fixed/2").send({ checked: true });
+    const res = await request(app)
+      .patch("/api/fixed/2")
+      .send({ checked: true });
     expect(res.statusCode).toBe(200);
     expect(res.body.message).toBe("Updated Successfully");
 
-    const after = await request(app).get("/fixed");
+    const after = await request(app).get("/api/fixed");
     expect(after.body.find((e) => e.id === 2).checked).toBe(1);
   });
 });
