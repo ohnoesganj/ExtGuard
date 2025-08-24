@@ -10,7 +10,7 @@ ExtGuard는 **파일 확장자를 차단하고 관리**할 수 있는 웹 애플
 - **Frontend:** React.js, Axios, SweetAlert2, CSS
 - **Backend:** Node.js, Express
 - **Database:** MySQL (MariaDB 호환)
-- **배포:** Nginx, Ubuntu, Certbot(HTTPS)
+- **배포:** AWS, Nginx, Ubuntu, Certbot(HTTPS)
 
 ---
 ## 🗂 ERD 설계
@@ -58,10 +58,10 @@ ExtGuard/
 - 경고 및 오류 알림 표시 (SweetAlert2)
 
 ### 4. 배포
+- AWS EC2 서버에서 호스팅
 - React 빌드 후 Nginx를 통해 서비스
 - HTTPS 지원 가능 (Certbot)
-- 웹 서비스: https://extguard.site/
-
+- 웹 서비스: [https://extguard.site/](https://extguard.site/)
 ---
 
 ## 🚀 설치 및 실행
