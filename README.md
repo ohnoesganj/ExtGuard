@@ -61,7 +61,6 @@ ExtGuard/
 - AWS EC2 서버에서 호스팅
 - React 빌드 후 Nginx를 통해 서비스
 - HTTPS 지원 가능 (Certbot)
-- 웹 서비스: [https://extguard.site/](https://extguard.site/)
 ---
 
 ## 🚀 설치 및 실행
@@ -82,4 +81,15 @@ npm install
 npm start       # 개발용
 npm run build   # 배포용
 ```
+---
+
+## 🧪 테스트 결과
+모든 API 테스트 통과 (DB 연결 확인 완료)
+<img width="882" height="518" alt="image" src="https://github.com/user-attachments/assets/ed463860-dc34-463a-9c82-03507dbbf08e" />
+
+---
+
+## 📌 웹 서비스
+도메인: https://extguard.site/
+
 ---
