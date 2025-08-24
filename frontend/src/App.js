@@ -63,9 +63,28 @@ function App() {
       return;
     }
 
-    await addCustomExtensions(customName);
-    setCustomName("");
-    fetchCustom();
+    try {
+      await addCustomExtensions(customName);
+      setCustomName("");
+      fetchCustom();
+    } catch (error) {
+      if (error.response && error.response.status === 400) {
+        const msg = error.response.data.error;
+        if (msg === "Exists Extension Name") {
+          Swal.fire({
+            icon: "warning",
+            title: "경고",
+            text: "고정 확장자에 이미 존재하는 확장자입니다.",
+          });
+        } else {
+          Swal.fire({
+            icon: "error",
+            title: "서버 오류",
+            text: "서버와 통신 중 문제가 발생했습니다.",
+          });
+        }
+      }
+    }
   };
 
   const handleDelete = async (id) => {
