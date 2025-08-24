@@ -1,6 +1,5 @@
 const CustomExtension = require("../models/CustomExtension");
 const { validateExtension } = require("../utils/validateExtension");
-const errorHandler = require("../utils/errorHandler");
 
 /* 커스텀 확장자 */
 
